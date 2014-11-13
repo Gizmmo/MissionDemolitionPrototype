@@ -416,6 +416,33 @@ MonoBehaviour:
   launchPoint: {fileID: 501763606}
   prefabProjectile: {fileID: 100000, guid: b2f5a290f13434471b128c2139eeb8df, type: 2}
   velocityMult: 10
+--- !u!1 &1867097980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1867097981}
+  m_Layer: 0
+  m_Name: CloudAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1867097981
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1867097980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.449998856, y: 1.53194499, z: -.409403801}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &2030548063
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +457,7 @@ GameObject:
   - 81: {fileID: 2030548064}
   - 114: {fileID: 2030548070}
   - 114: {fileID: 2030548069}
+  - 114: {fileID: 2030548071}
   m_Layer: 0
   m_Name: _Main Camera
   m_TagString: MainCamera
@@ -528,6 +556,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   easing: .0500000007
   minXY: {x: 0, y: 0}
+--- !u!114 &2030548071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2030548063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ea65c57be0041f8b7708e608eb5d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numClouds: 40
+  cloudPrefabs:
+  - {fileID: 100000, guid: 3987534a401e44d71916d4650d498b88, type: 2}
+  - {fileID: 100008, guid: 242aec02fb0c44292ad428aa18709a06, type: 2}
+  cloudPosMin: {x: -50, y: -5, z: 10}
+  cloudPosMax: {x: 150, y: 100, z: 10}
+  cloudScaleMin: 1
+  cloudScaleMax: 5
+  cloudSpeedMult: .5
 --- !u!1 &2048349140
 GameObject:
   m_ObjectHideFlags: 0
