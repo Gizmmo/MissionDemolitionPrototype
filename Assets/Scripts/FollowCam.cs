@@ -6,8 +6,19 @@ public class FollowCam : MonoBehaviour {
 	public float				easing = 0.05f;
 	public Vector2				minXY;
 
-	private GameObject			poi;//The point of intrest
+	private GameObject			_poi;//The point of intrest
 	private float				camZ; //the desired Z pos of the camera
+
+	//Returns the location of the most recently added point
+	public GameObject poi {
+		get {
+			return _poi;
+		}
+		set {
+			_poi = value;
+		}
+	}
+
 
 	// Use this for initialization
 	void Start () {
@@ -19,19 +30,19 @@ public class FollowCam : MonoBehaviour {
 	void FixedUpdate () {
 		Vector3 destination;
 		//If there is no poi, return to P:[0,0,0]
-		if (poi == null){
+		if (_poi == null){
 			destination = Vector3.zero;
 		} else{
 			
 			//Get the position of the poi
-			destination = poi.transform.position;
+			destination = _poi.transform.position;
 			
 			//If poi is a Projectile, check to see if it's at rest
-			if (poi.tag == "Projectile"){
+			if (_poi.tag == "Projectile"){
 				//if it is sleeping (that is, not moving)
-				if(poi.rigidbody.IsSleeping()){
+				if(_poi.rigidbody.IsSleeping()){
 					//return to default view
-					poi = null;
+					_poi = null;
 					//in the next update
 					return;
 				}
@@ -50,13 +61,5 @@ public class FollowCam : MonoBehaviour {
 		transform.position = destination;
 		//Set the orthographicSize of the camera to keep ground in view
 		this.camera.orthographicSize = destination.y + 10;
-	}
-
-	public GameObject GetPOI() {
-		return poi;
-	}
-
-	public void SetPOI(GameObject poi) {
-		this.poi = poi;
 	}
 }
