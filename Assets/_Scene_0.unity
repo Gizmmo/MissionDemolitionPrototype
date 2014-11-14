@@ -2306,7 +2306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchPoint: {fileID: 501763606}
   prefabProjectile: {fileID: 100000, guid: b2f5a290f13434471b128c2139eeb8df, type: 2}
-  velocityMult: 10
+  velocityMult: 40
 --- !u!1001 &1369598768
 Prefab:
   m_ObjectHideFlags: 0
